@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Logo + Address */}
         <div>
           <div className="flex items-center space-x-2 mx-auto justify-center lg:justify-start">
-            <Image src="/logo-black.svg" alt="logo" width={150} height={150} />
+           <a href="/"> <Image src="/logo-black.svg" alt="logo" width={150} height={150} /> </a>
           </div>
           <h6 className="mt-4 text-lg leading-6 font-light text-center lg:text-left">
             4th Floor, 16 & 16/1,
@@ -70,7 +70,7 @@ export default function Footer() {
       <div className="bg-black text-white text-center text-sm py-4 px-4">
         <span className="mr-2">Terms & Conditions</span>{" "}  <span className="mx-2 text-[#D4AF37]">|</span>{" "}
         <span className="">Privacy Policy</span>  <span className="mx-2 text-[#D4AF37]">|</span>
-        <span className="ml-2">© 2025 Ivory & Gold</span>
+        <span className="ml-2">© {new Date().getFullYear()} Ivory & Gold</span>
       </div>
     </footer>
   );

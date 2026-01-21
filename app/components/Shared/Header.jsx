@@ -43,7 +43,7 @@ const Header = () => {
       {/* Top Bar */}
       <div className="hidden md:flex justify-end text-lg pr-6 py-4">
         <span className="mr-4">Working Hours: 10:00 AM to 8:00 PM</span>
-        <span className="mr-4">Call: 01234567890</span>
+        <span className="mr-4">Call: <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a> , <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a></span>
       </div>
 
       {/* Main Navbar */}
@@ -59,16 +59,6 @@ const Header = () => {
               className="lg:-mt-16 lg:h-auto lg:w-auto h-32 w-32"
             />
           </Link>
-          <div className="lg:hidden py-3">
-            <span className="text-sm">Working Hours: 10:00 AM to 8:00 PM</span>{" "}
-            <br />
-            <span className=" text-sm">Call: 01234567890</span>
-            <Link href="/booking" className="">
-              <button className="w-42 mt-3 bg-[#d4af37] hover:bg-white hover:text-black transition-all duration-300 text-black font-medium px- py-2 rounded-xl">
-                Book Appointment
-              </button>
-            </Link>
-          </div>
         </div>
 
         {/* Desktop Menu */}
@@ -141,9 +131,17 @@ const Header = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-black text-white px-6 py-4 space-y-4 border-t border-gray-800">
-          <div className="hidden md:flex justify-end text-lg pr-6 py-4">
-            <span className="mr-4">Working Hours: 10:00 AM to 8:00 PM</span>
-            <span className="mr-4">Call: 01234567890</span>
+          {/* Working Hours and Call Info */}
+          <div className="space-y-2 pb-4 border-b border-gray-800">
+            <div className="text-sm">
+              <span>Working Hours: 10:00 AM to 8:00 PM</span>
+            </div>
+            <div className="text-sm">
+              <span>Call: </span>
+              <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a>
+              <span> , </span>
+              <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a>
+            </div>
           </div>
 
           {/* Mobile Navigation Items */}
@@ -201,6 +199,13 @@ const Header = () => {
           ))}
         </div>
       )}
+
+      {/* Floating Book Appointment Button - Mobile Only */}
+      <Link href="/booking" className="md:hidden fixed bottom-6 right-6 z-50 ">
+        <button className="bg-[#d4af37] hover:bg-white hover:text-black transition-all duration-300 text-black font-medium px-6 py-3 rounded-full shadow-lg">
+          Book Appointment
+        </button>
+      </Link>
     </header>
   );
 };

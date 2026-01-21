@@ -13,12 +13,12 @@ const Cards = () => {
       alt: "map",
       title: "Visit Us",
       content: (
-       <>
+        <>
           Ivory & Gold Luxury Salon <br />
           4th Floor, 16 & 16/1, Vasanth Nagar, <br />
           Bengaluru, Karnataka 560025
-          </>
-        
+        </>
+
       ),
     },
     {
@@ -27,9 +27,10 @@ const Cards = () => {
       alt: "phone",
       title: "Call Us",
       content: (
-        <>
-        <a href="tel:+91 [phone number]">+91 [phone number]</a>
-        </>
+        <div className="flex flex-col">
+          <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a>
+          <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a>
+        </div>
       ),
     },
     {
@@ -39,7 +40,7 @@ const Cards = () => {
       title: "Write to Us",
       content: (
         <>
-        <a href="mailto:contact@ivoryandgold.com">contact@ivoryandgold.com</a>
+          <a href="mailto:contact@ivoryandgold.com">contact@ivoryandgold.com</a>
         </>
       ),
     },
@@ -50,7 +51,7 @@ const Cards = () => {
       title: "Hours",
       content: (
         <>
-        Monday – Sunday: 10 AM – 8 PM
+          Monday – Sunday: 10 AM – 8 PM
         </>
       ),
     },
@@ -64,7 +65,7 @@ const Cards = () => {
           <Link target="_blank" href="https://www.instagram.com/"><IoLogoInstagram className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
           <Link target="_blank" href="https://www.facebook.com/"><RiFacebookCircleLine className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
           <Link target="_blank" href="https://www.linkedin.com/company/"><PiLinkedinLogo className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
-          
+
         </div>
       ),
     },

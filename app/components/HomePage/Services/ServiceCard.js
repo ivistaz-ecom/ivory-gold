@@ -33,8 +33,8 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-1 gap-2 p-0">
           <ServiceCard
             image="/home/services/nail.png"
-            title={<><h2 className="lg:text-3xl">Nail</h2></>}
-            description={<><span className="lg:text-3xl roboto-light">From soft accents to statement sets. Always tailored, always you.</span></>}
+            title="Nail"
+            description="From soft accents to statement sets. Always tailored, always you."
             bgColor="rgba(246, 232, 177)"
             cardHeight="h-[500px]"
           />
