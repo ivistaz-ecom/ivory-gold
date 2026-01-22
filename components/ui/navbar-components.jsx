@@ -8,6 +8,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
+import Link from "next/link";
 
 import React, { useRef, useState } from "react";
 
@@ -83,23 +84,29 @@ export const NavItems = ({ items, className, onItemClick }) => {
         className
       )}
     >
-      {items.map((item, idx) => (
-        <a
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
-          key={`link-${idx}`}
-          href={item.link}
-        >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
-            />
-          )}
-          <span className="relative z-20">{item.name}</span>
-        </a>
-      ))}
+      {items.map((item, idx) => {
+        const isInternalLink = item.link && item.link.startsWith('/');
+        const LinkComponent = isInternalLink ? Link : 'a';
+        const linkProps = isInternalLink ? { href: item.link } : { href: item.link };
+        
+        return (
+          <LinkComponent
+            onMouseEnter={() => setHovered(idx)}
+            onClick={onItemClick}
+            className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+            key={`link-${idx}`}
+            {...linkProps}
+          >
+            {hovered === idx && (
+              <motion.div
+                layoutId="hovered"
+                className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              />
+            )}
+            <span className="relative z-20">{item.name}</span>
+          </LinkComponent>
+        );
+      })}
     </motion.div>
   );
 };
@@ -177,12 +184,12 @@ export const MobileNavToggle = ({ isOpen, onClick }) => {
 
 export const NavbarLogo = () => {
   return (
-    <a
-      href="#"
+    <Link
+      href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img src="/logo.svg" alt="logo" width={150} height={150} />
-    </a>
+    </Link>
   );
 };
 

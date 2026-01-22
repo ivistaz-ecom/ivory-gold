@@ -74,7 +74,7 @@ const Header = () => {
                   <button className="hover:text-[#d4af37] flex items-center gap-1 text-lg">
                     {item.name} ▾
                   </button>
-                  <ul className="absolute z-[60] hidden group-hover:block bg-black text-white mt-0 rounded-lg shadow-lg p-2 min-w-[150px]">
+                  <ul className="absolute z-60 hidden group-hover:block bg-black text-white mt-0 rounded-lg shadow-lg p-2 min-w-[150px]">
                     {item.items.map((service) => (
                       <li
                         key={service.href}
@@ -201,7 +201,7 @@ const Header = () => {
       )}
 
       {/* Floating Book Appointment Button - Mobile Only */}
-      <Link href="/booking" className="md:hidden fixed bottom-6 right-6 z-50 ">
+      <Link href="/booking" className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 ">
         <button className="bg-[#d4af37] hover:bg-white hover:text-black transition-all duration-300 text-black font-medium px-6 py-3 rounded-full shadow-lg">
           Book Appointment
         </button>

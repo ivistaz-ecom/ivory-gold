@@ -66,7 +66,7 @@ const Contact = () => {
             </div>
             <h6 className="text-white lg:text-xl roboto-light">
               <span >
-                <a href="tel:+917428730894">+917428730894</a>
+              <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a> , <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a>
               </span>
             </h6>
           </div>

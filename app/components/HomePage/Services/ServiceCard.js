@@ -30,13 +30,13 @@ export default function Services() {
   return (
     <>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-2 p-0">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-2 p-2 lg:p-0">
           <ServiceCard
             image="/home/services/nail.png"
             title="Nail"
             description="From soft accents to statement sets. Always tailored, always you."
             bgColor="rgba(246, 232, 177)"
-            cardHeight="h-[500px]"
+            cardHeight="h-[400px] lg:h-[500px]"
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5 gap-2 p-2">

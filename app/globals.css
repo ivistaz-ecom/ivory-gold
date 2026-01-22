@@ -277,6 +277,27 @@ button {
   }
 }
 
+/* Make all links have pointer cursor */
+a,
+a[href],
+a:hover,
+a[href]:hover,
+a:focus,
+a[href]:focus,
+a:active,
+a[href]:active,
+a:visited,
+a[href]:visited {
+  cursor: pointer !important;
+}
+
+/* Ensure Next.js Link components also have pointer cursor */
+a[href^="/"],
+a[href^="/"]:hover,
+a[href^="/"]:focus {
+  cursor: pointer !important;
+}
+
 
 .marker-green::marker {
   color: #67C15E !important;
