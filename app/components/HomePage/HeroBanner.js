@@ -1,39 +1,37 @@
 import React from "react";
-import Image from "next/image";
 
 const HeroBanner = () => {
   return (
     <>
-      <div className="lg:h-[85vh] h-[50vh] hidden lg:block">
+      {/* Desktop */}
+      <div className="hidden lg:block lg:h-[85vh] w-full bg-black">
         <video
-          src="/home/ivory_desktop_video.mp4"
-          alt="hero-banner"
-          width={1920}
-          height={1080}
-          className="object-cover w-full h-full"
+          className="w-full h-full object-cover"
           autoPlay
-          loop
           muted
+          loop
           playsInline
-          preload="auto"
         >
-          <source src="/home/banner.mp4" type="video/mp4" />
+          <source
+            src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/ivory-gold/Jan-2026/home-banner/Ivory-gold-desk-banner.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
-      <div className="h-[80vh] lg:hidden block">
+
+      {/* Mobile */}
+      <div className="block lg:hidden h-[80vh] w-full bg-black">
         <video
-          src="/home/hero-banner-mobile.mp4"
-          alt="hero-banner"
-          width={1920}
-          height={1080}
-          className="object-cover w-full h-full"
+          className="w-full h-full object-cover"
           autoPlay
-          loop
           muted
+          loop
           playsInline
-          preload="auto"
         >
-          <source src="/home/hero-banner-mobile.mp4" type="video/mp4" />
+          <source
+            src="https://ivista-digital-bucket.blr1.cdn.digitaloceanspaces.com/ivory-gold/Jan-2026/home-banner/Ivory-gold-mob-banner.mp4"
+            type="video/mp4"
+          />
         </video>
       </div>
     </>

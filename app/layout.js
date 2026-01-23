@@ -16,6 +16,15 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "ivory & gold",
   description: "ivory gold is a beauty salon in bangalore",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/logo.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/logo.svg', type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
