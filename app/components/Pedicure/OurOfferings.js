@@ -16,7 +16,7 @@ const OurOfferings = () => {
       id: 2,
       title: <h3>Bespoke Pedicure</h3>,
       description:
-        "Personalised from start to finish,  every detail, from cuticle care to polish, is tailored to your needs. A treatment that feels considered, never routine.",
+        "Personalised from start to finish, every detail, from cuticle care to polish, is tailored to your needs. A treatment that feels considered, never routine.",
       image: "/pedicure/pedicure-2.png",
       imageAlt: "Soft Gel & Builder Gel",
       imageFirst: false,

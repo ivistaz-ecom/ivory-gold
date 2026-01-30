@@ -43,7 +43,7 @@ const Contact = () => {
             </div>
             <h6 className="text-white lg:text-xl roboto-light">
               <span>
-                Near Jain Hospital, Vasanth Nagar, Bengaluru, Karnataka 560025
+                Near Jain Hospital, Vasanth Nagar, Bengaluru, Karnataka 560052
               </span>
             </h6>
           </div>
@@ -87,7 +87,7 @@ const Contact = () => {
           </div>
           <iframe
             className="w-full h-full rounded-md"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.998156002647!2d77.60210301170989!3d12.971969487290625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3f7d8ccc4207%3A0xbd78d1bf607434a!2siVistaz%20Ecom%20Services%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1718256858925!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6906847278583!2d77.59245997507685!3d12.99162498732558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1642c63e2c23%3A0x730cce157da6d9cb!2sBhagwan%20Mahaveer%20Jain%20Hospital!5e0!3m2!1sen!2sin!4v1769749903427!5m2!1sen!2sin"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"

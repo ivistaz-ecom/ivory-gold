@@ -8,9 +8,9 @@ const ElevatedBeauty = () => {
           Elevated Beauty. <br />
           Effortlessly Graceful,
         </h1>
-        <p className="text-center text-xl lg:w-[60%] mx-auto lg:pt-10 pt-5 lg:px-0 px-4">
-          Where sophistication meets artistry in a calm, curated space. Ivory &
-          Gold reimagines beauty as a quiet ritual of care, craft, and
+        <p className="text-center text-xl lg:w-[70%] mx-auto lg:pt-10 pt-5 lg:px-0 px-4">
+          Where sophistication meets artistry in a calm, curated space. <br/>
+          Ivory & Gold reimagines beauty as a quiet ritual of care, craft, and
           considered elegance.
         </p>
       </div>

@@ -6,7 +6,14 @@ const ContentSection = () => {
     <div>
       <Content
         title="Beauty Beneath the Surface"
-        description="Nourishment that is elevated. Treatments crafted to bring tranquility, radiance, and precision to every moment."
+        description={
+          <>
+            Nourishment that is elevated. Treatments crafted to bring
+            tranquility, radiance, and precision to
+            <br />
+            every moment.
+          </>
+        }
       />
     </div>
   );
