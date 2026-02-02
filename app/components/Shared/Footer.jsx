@@ -14,7 +14,7 @@ export default function Footer() {
            <Link href="/"> <Image src="/logo-black.svg" alt="logo" width={150} height={150} /> </Link>
           </div>
           <h6 className="mt-4 text-lg leading-6 font-light text-center lg:text-left">
-            Near Jain Hospita,
+            Near Jain Hospital,
             Vasanth Nagar,<br />
             Bengaluru, Karnataka 560025
           </h6>
