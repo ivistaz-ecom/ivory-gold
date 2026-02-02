@@ -43,7 +43,7 @@ const Contact = () => {
             </div>
             <h6 className="text-white lg:text-xl roboto-light">
               <span>
-                Near Jain Hospital, Vasanth Nagar, Bengaluru, Karnataka 560052
+              No.32 Millers Road, Kaverappa Layout, Vasant Nagar Bengaluru, Karnataka 560025 
               </span>
             </h6>
           </div>
@@ -66,7 +66,7 @@ const Contact = () => {
             </div>
             <h6 className="text-white lg:text-xl roboto-light">
               <span >
-              <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a> , <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a>
+              <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">080 4120 0116</a> , <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a>
               </span>
             </h6>
           </div>
@@ -87,7 +87,7 @@ const Contact = () => {
           </div>
           <iframe
             className="w-full h-full rounded-md"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6906847278583!2d77.59245997507685!3d12.99162498732558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1642c63e2c23%3A0x730cce157da6d9cb!2sBhagwan%20Mahaveer%20Jain%20Hospital!5e0!3m2!1sen!2sin!4v1769749903427!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.698187867264!2d77.5922284750768!3d12.991145687326028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1642953f7b43%3A0x5a89efe0095394d1!2s32%2C%20Millers%20Rd%2C%20Kaverappa%20Layout%2C%20Vasanth%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560001!5e0!3m2!1sen!2sin!4v1770025476395!5m2!1sen!2sin"
             style={{ border: 0 }}
             allowFullScreen={true}
             loading="lazy"

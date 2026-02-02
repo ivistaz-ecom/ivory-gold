@@ -14,8 +14,8 @@ const Cards = () => {
       title: "Visit Us",
       content: (
         <>
-          Ivory & Gold Luxury Salon <br />
-          4th Floor, 16 & 16/1, Vasanth Nagar, <br />
+          No.32 Millers Road,<br/>
+          Kaverappa Layout, Vasant Nagar<br/>
           Bengaluru, Karnataka 560025
         </>
 
@@ -28,7 +28,7 @@ const Cards = () => {
       title: "Call Us",
       content: (
         <div className="flex flex-col">
-          <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a>
+          <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">080 4120 0116</a>
           <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a>
         </div>
       ),

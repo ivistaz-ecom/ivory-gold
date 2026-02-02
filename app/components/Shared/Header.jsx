@@ -43,7 +43,7 @@ const Header = () => {
       {/* Top Bar */}
       <div className="hidden md:flex justify-end text-lg pr-6 py-4">
         <span className="mr-4">Working Hours: 10:00 AM to 8:00 PM</span>
-        <span className="mr-4">Call: <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a> , <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a></span>
+        <span className="mr-4">Call: <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">080 4120 0116</a> , <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a></span>
       </div>
 
       {/* Main Navbar */}
@@ -138,7 +138,7 @@ const Header = () => {
             </div>
             <div className="text-sm">
               <span>Call: </span>
-              <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">+91 80 4120 0116</a>
+              <a href="tel:+918041200116" className="hover:text-[#d4af37] transition-colors">080 4120 0116</a>
               <span> , </span>
               <a href="tel:+918147401166" className="hover:text-[#d4af37] transition-colors">+91 81 4740 1166</a>
             </div>
