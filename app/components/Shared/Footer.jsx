@@ -25,7 +25,7 @@ export default function Footer() {
           <h3 className="text-lg font-light mb-4 border-b border-gray-200">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link href="/about-us" className="hover:text-gray-600 text-lg font-light">About Us</Link></li>
-            <li><Link href="/membership" className="hover:text-gray-600 text-lg font-light">Membership</Link></li>
+            {/* <li><Link href="/membership" className="hover:text-gray-600 text-lg font-light">Membership</Link></li> */}
             <li><Link href="/blogs" className="hover:text-gray-600 text-lg font-light">Blogs</Link></li>
             <li><Link href="/gallery" className="hover:text-gray-600 text-lg font-light">Gallery</Link></li>
             <li><Link href="/media" className="hover:text-gray-600 text-lg font-light">Media</Link></li>
