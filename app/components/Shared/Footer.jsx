@@ -60,8 +60,8 @@ export default function Footer() {
             <h3 className="text-lg font-light mb-3 wolmer-light">Social Media</h3>
             <div className="flex space-x-4 text-2xl">
               <a target="_blank" href="https://www.instagram.com/ivoryandgoldsalon/"><FaInstagram className="hover:text-gray-600" /></a>
-              {/* <a href="#"><FaFacebook className="hover:text-gray-600" /></a>
-              <a href="#"><FaLinkedin className="hover:text-gray-600" /></a> */}
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=61584431202109"><FaFacebook className="hover:text-gray-600" /></a>
+              {/* <a href="#"><FaLinkedin className="hover:text-gray-600" /></a> */}
             </div>
           </div>
         </div>
