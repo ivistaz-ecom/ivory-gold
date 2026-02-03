@@ -55,7 +55,7 @@ const Cards = () => {
       title: "Personalised care",
       content: (
         <>
-          From the first brushstroke <br /> to the final polish, <br />{" "}
+          From the first detail <br /> to the final polish, <br />{" "}
           everything is attuned to <br /> your comfort.
         </>
       ),

@@ -12,11 +12,7 @@ const AboutIvory = () => {
           <div className="text-center">
             <h1 className="text-2xl font-bold">About Ivory & Gold</h1>
             <p className="lg:w-[80%] mx-auto lg:pt-10 pt-5 pb-5 lg:pb-10 lg:px-0 px-4">
-              Where refined beauty meets modern indulgence, Ivory & Gold is a
-              sanctuary of calm and craft - where every detail is considered,
-              and each moment feels like your own quiet ritual of elegance. From
-              flawless nails to moments of stillness, step into your own era of
-              glam.
+            Where refined beauty meets modern indulgence, Ivory & Gold is a calm, crafted retreat: every detail intentional, every visit a quiet ritual of elegance. From immaculate nails to unhurried moments of care, step into your own moment of luxury.
             </p>
           </div>
         </div>

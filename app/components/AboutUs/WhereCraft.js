@@ -45,17 +45,10 @@ export default function CraftCalmSection() {
             in its most composed form.
           </p>
           <p className="text-sm md:text-base text-gray-800 leading-relaxed">
-            We are not just a salon, we are a luxury atelier, built on the
-            belief that true beauty isn’t declared, it’s felt. Rooted in the
-            soft power of refinement, we serve those who seek more than
-            aesthetics: an experience that lingers, subtle yet unforgettable.
+          <b>A unisex luxury atelier</b>, we are built on the belief that true beauty isn’t declared, it’s felt. Rooted in the quiet power of refinement, we serve those who seek more than aesthetics: an experience that lingers, subtle yet unforgettable.
           </p>
           <p className="text-sm md:text-base text-gray-800 leading-relaxed">
-            Here, luxury whispers, not shouts. A gleam of polish. A glint of
-            gold. A silence that soothes. Every service is elevated, every
-            gesture refined with craft. We embrace calm over urgency, intention
-            over imitation, because beauty is not about following trends, but
-            about creating standards.
+          Here, luxury is whispers, not shouts. A gleam of polish. A glint of gold. A silence that soothes. Every service is elevated, every gesture refined with craft. We embrace calm over urgency, intention over imitation, because beauty is not about following trends, but about creating standards.
           </p>
           <p className="text-sm md:text-base text-gray-800 leading-relaxed">
             At Ivory & Gold, we curate gracefulness. Each visit is a retreat

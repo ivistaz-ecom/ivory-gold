@@ -19,7 +19,7 @@ const index = () => {
       <AboutIvory />
       <Testimonials />
       <Elegance />
-      <InfluencerSpotlight />
+      {/* <InfluencerSpotlight /> */}
       {/* <Swiper /> */}  
       <Contact />
       <GentleWelcome />
