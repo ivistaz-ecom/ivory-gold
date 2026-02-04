@@ -251,7 +251,7 @@ const BookingForm = () => {
 
       // Submit to Contact Form 7 REST API
       const response = await axios.post(
-        'https://docs.ivistaz.com/wp-json/contact-form-7/v1/contact-forms/1163/feedback',
+        'https://docs.ivoryandgold.in/wp-json/contact-form-7/v1/contact-forms/6/feedback',
         formDataToSend,
         {
           headers: {
