@@ -17,7 +17,7 @@ const index = () => {
       <ElevatedBeauty />
       <Services />
       <AboutIvory />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Elegance />
       {/* <InfluencerSpotlight /> */}
       {/* <Swiper /> */}  

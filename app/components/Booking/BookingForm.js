@@ -96,7 +96,7 @@ const BookingForm = () => {
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
@@ -112,14 +112,14 @@ const BookingForm = () => {
       setFormData(prev => ({ ...prev, "your-phone": "" }));
       return;
     }
-  
+
     // Extract digits only (remove + and spaces)
     const digits = value.replace(/\D/g, "");
-  
+
     // Keep first 2–3 digits as country code, rest as actual number
     let countryCode = "";
     let number = "";
-  
+
     if (digits.startsWith("91")) { // If India selected
       countryCode = "+91";
       number = digits.slice(2);
@@ -128,23 +128,47 @@ const BookingForm = () => {
       countryCode = "+" + digits.slice(0, 3);
       number = digits.slice(3);
     }
-  
+
     // Restrict to 10 digits max for number
     if (number.length > 10) {
       number = number.slice(0, 10);
     }
-  
+
     const finalNumber = countryCode + number;
-  
+
     setFormData(prev => ({
       ...prev,
       "your-phone": finalNumber
     }));
-  
+
     // Clear error if fixed
     if (errors["your-phone"]) {
       setErrors(prev => ({ ...prev, "your-phone": "" }));
     }
+  };
+
+  // Check if date is today
+  const isToday = (date) => {
+    if (!date) return false;
+    const today = new Date();
+    return date.getDate() === today.getDate() &&
+      date.getMonth() === today.getMonth() &&
+      date.getFullYear() === today.getFullYear();
+  };
+
+  // Get min time: if today, use next 15-min slot; otherwise 10 AM
+  const getMinTime = () => {
+    const base = new Date(2000, 0, 1, 10, 0, 0); // 10 AM
+    if (!selectedDate || !isToday(selectedDate)) return base;
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    if (hours >= 20) return null; // Past 8 PM - no slots
+    const roundedMinutes = Math.ceil(minutes / 15) * 15;
+    const nextMin = roundedMinutes === 60 ? 0 : roundedMinutes;
+    const nextHour = roundedMinutes === 60 ? hours + 1 : hours;
+    if (nextHour >= 20) return null;
+    return new Date(2000, 0, 1, nextHour, nextMin, 0);
   };
 
   // Handle date change
@@ -156,7 +180,11 @@ const BookingForm = () => {
         ...prev,
         "your-date": formattedDate
       }));
-      
+      // Clear time when switching to today (may have picked a past slot)
+      if (isToday(date)) {
+        setSelectedTime(null);
+        setFormData(prev => ({ ...prev, "your-time": "" }));
+      }
       // Clear error
       if (errors["your-date"]) {
         setErrors(prev => ({
@@ -176,7 +204,7 @@ const BookingForm = () => {
         ...prev,
         "your-time": formattedTime
       }));
-      
+
       // Clear error
       if (errors["your-time"]) {
         setErrors(prev => ({
@@ -186,7 +214,7 @@ const BookingForm = () => {
       }
     }
   };
-  
+
   // Handle service selection
   const handleServiceSelect = (service) => {
     setFormData(prev => ({
@@ -194,7 +222,7 @@ const BookingForm = () => {
       "your-service": service
     }));
     setIsOpen(false);
-    
+
     // Clear error
     if (errors["your-service"]) {
       setErrors(prev => ({
@@ -210,7 +238,7 @@ const BookingForm = () => {
       ...prev,
       "your-visit": value
     }));
-    
+
     // Clear error
     if (errors["your-visit"]) {
       setErrors(prev => ({
@@ -223,7 +251,7 @@ const BookingForm = () => {
   // Submit form to Contact Form 7 REST API
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -235,7 +263,7 @@ const BookingForm = () => {
     try {
       // Create FormData for multipart/form-data submission
       const formDataToSend = new FormData();
-      
+
       // Add all form fields
       Object.keys(formData).forEach(key => {
         formDataToSend.append(key, formData[key]);
@@ -285,7 +313,7 @@ const BookingForm = () => {
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
-      
+
       // Handle CF7 validation errors from response
       if (error.response?.data?.invalid_fields) {
         setCf7Errors(error.response.data.invalid_fields);
@@ -334,13 +362,12 @@ const BookingForm = () => {
               placeholder="Your Name"
               value={formData["your-name"]}
               onChange={handleInputChange}
-              className={`w-full rounded-xl border p-3 focus:outline-none ${
-                errors["your-name"] ? 'border-red-500' : 'border-gray-300'
-              }`}
+              className={`w-full rounded-xl border p-3 focus:outline-none ${errors["your-name"] ? 'border-red-500' : 'border-gray-300'
+                }`}
             />
             {errors["your-name"] && <span className="text-red-500 text-sm mt-1">{errors["your-name"]}</span>}
           </div>
-          
+
           <div>
             <input
               type="email"
@@ -348,9 +375,8 @@ const BookingForm = () => {
               placeholder="Email ID"
               value={formData["your-email"]}
               onChange={handleInputChange}
-              className={`w-full rounded-xl border p-3 focus:outline-none ${
-                errors["your-email"] ? 'border-red-500' : 'border-gray-300'
-              }`}
+              className={`w-full rounded-xl border p-3 focus:outline-none ${errors["your-email"] ? 'border-red-500' : 'border-gray-300'
+                }`}
             />
             {errors["your-email"] && <span className="text-red-500 text-sm mt-1">{errors["your-email"]}</span>}
           </div>
@@ -360,9 +386,8 @@ const BookingForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           {/* Phone Input */}
           <div>
-            <div className={`border rounded-xl p-3 ${
-              errors["your-phone"] ? 'border-red-500' : 'border-gray-300'
-            }`}>
+            <div className={`border rounded-xl p-3 ${errors["your-phone"] ? 'border-red-500' : 'border-gray-300'
+              }`}>
               <PhoneInput
                 placeholder="Enter phone number"
                 value={formData["your-phone"]}
@@ -381,9 +406,8 @@ const BookingForm = () => {
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
-              className={`w-full flex justify-between items-center rounded-xl border p-3 focus:outline-none ${
-                errors["your-service"] ? 'border-red-500' : 'border-gray-300'
-              } bg-[#f5f0e8]`}
+              className={`w-full flex justify-between items-center rounded-xl border p-3 focus:outline-none ${errors["your-service"] ? 'border-red-500' : 'border-gray-300'
+                } bg-[#f5f0e8]`}
             >
               <span className="text-gray-800">{formData["your-service"] || "Select Services"}</span>
               {isOpen ? (
@@ -413,9 +437,8 @@ const BookingForm = () => {
         {/* Third Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div>
-            <div className={`relative border rounded-xl p-3 ${
-              errors["your-date"] ? 'border-red-500' : 'border-gray-300'
-            }`}>
+            <div className={`relative border rounded-xl p-3 ${errors["your-date"] ? 'border-red-500' : 'border-gray-300'
+              }`}>
               <DatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}
@@ -429,11 +452,10 @@ const BookingForm = () => {
             </div>
             {errors["your-date"] && <span className="text-red-500 text-sm mt-1">{errors["your-date"]}</span>}
           </div>
-          
+
           <div>
-            <div className={`relative border rounded-xl p-3 ${
-              errors["your-time"] ? 'border-red-500' : 'border-gray-300'
-            }`}>
+            <div className={`relative border rounded-xl p-3 ${errors["your-time"] ? 'border-red-500' : 'border-gray-300'
+              }`}>
               <DatePicker
                 selected={selectedTime}
                 onChange={handleTimeChange}
@@ -442,7 +464,9 @@ const BookingForm = () => {
                 timeIntervals={15}
                 timeCaption="Time"
                 dateFormat="h:mm aa"
-                placeholderText="Preferred Time (HH:MM)"
+                minTime={getMinTime() ?? new Date(2000, 0, 1, 21, 0, 0)}
+                maxTime={new Date(2000, 0, 1, 20, 0, 0)}
+                placeholderText="Preferred Time (10 AM - 8 PM)"
                 className="w-full pr-10 focus:outline-none bg-transparent"
                 showPopperArrow={false}
               />
@@ -459,22 +483,20 @@ const BookingForm = () => {
             <button
               type="button"
               onClick={() => handleVisitedBefore("Yes")}
-              className={`px-4 py-1 rounded-l-3xl focus:outline-none border-0 ${
-                formData["your-visit"] === "Yes"
-                  ? 'bg-[#D4AF37] text-black duration-500 transition-all'
-                  : 'bg-white border text-black'
-              }`}
+              className={`px-4 py-1 rounded-l-3xl focus:outline-none border-0 ${formData["your-visit"] === "Yes"
+                ? 'bg-[#D4AF37] text-black duration-500 transition-all'
+                : 'bg-white border text-black'
+                }`}
             >
               Yes
             </button>
             <button
               type="button"
               onClick={() => handleVisitedBefore("No")}
-              className={`px-4 py-1 rounded-r-3xl focus:outline-none border-0 ${
-                formData["your-visit"] === "No"
-                  ? 'bg-[#D4AF37] text-black duration-500 transition-all'
-                  : 'bg-white border text-black'
-              }`}
+              className={`px-4 py-1 rounded-r-3xl focus:outline-none border-0 ${formData["your-visit"] === "No"
+                ? 'bg-[#D4AF37] text-black duration-500 transition-all'
+                : 'bg-white border text-black'
+                }`}
             >
               No
             </button>
@@ -487,11 +509,10 @@ const BookingForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className={`px-6 py-2 border rounded-xl shadow-sm hover:shadow-md transition font-medium border-[#D4AF37] flex items-center gap-2 ${
-              isSubmitting 
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
-                : 'bg-white hover:bg-[#D4AF37]'
-            }`}
+            className={`px-6 py-2 border rounded-xl shadow-sm hover:shadow-md transition font-medium border-[#D4AF37] flex items-center gap-2 ${isSubmitting
+              ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+              : 'bg-white hover:bg-[#D4AF37]'
+              }`}
           >
             {isSubmitting && <Loader2 className="w-4 h-4 animate-spin" />}
             {isSubmitting ? 'Submitting...' : 'Book A Slot'}

@@ -13,15 +13,16 @@
   font-style: normal;
   font-display: swap;
 }
+
 * {
   font-family: "Roboto";
   /* font-family: "Wolmer"; */
 }
+
 /* Roboto Font Family */
 @font-face {
   font-family: "Roboto";
-  src: url("/font/roboto/Roboto-VariableFont_wdth,wght.ttf")
-    format("truetype-variations");
+  src: url("/font/roboto/Roboto-VariableFont_wdth,wght.ttf") format("truetype-variations");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -29,40 +30,45 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("/font/roboto/Roboto-Italic-VariableFont_wdth,wght.ttf")
-    format("truetype-variations");
+  src: url("/font/roboto/Roboto-Italic-VariableFont_wdth,wght.ttf") format("truetype-variations");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
 }
+
 .custom-font {
   font-family: "Wolmer";
   font-weight: 300;
   font-style: normal;
   font-size: 5rem;
 }
+
 @media (max-width: 768px) {
   .custom-font {
     font-size: 3rem;
   }
 }
+
 .wolmer-100 {
   font-family: "Wolmer";
   font-weight: 300;
   font-style: normal;
   font-size: 150px;
 }
+
 @media (max-width: 768px) {
   .wolmer-100 {
     font-size: 3rem;
   }
 }
+
 .wolmer-bold {
   font-family: "Wolmer";
   font-weight: normal;
   font-style: normal;
   /* font-size: 4rem; */
 }
+
 h1 {
   font-family: "Wolmer";
   font-weight: normal;
@@ -70,33 +76,39 @@ h1 {
   font-size: 5rem;
   line-height: 1;
 }
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
   }
 }
+
 h2 {
   font-family: "Wolmer";
   font-weight: normal;
   font-style: normal;
   font-size: 4rem;
 }
+
 @media (max-width: 768px) {
   h2 {
     font-size: 2rem;
   }
 }
+
 h3 {
   font-family: "Wolmer";
   font-weight: normal;
   font-style: normal;
   font-size: 2.5rem;
 }
+
 @media (max-width: 768px) {
   h3 {
     font-size: 1.5rem;
   }
 }
+
 p {
   font-family: "Roboto";
   font-weight: 300;
@@ -105,6 +117,7 @@ p {
   line-height: 1.5;
   color: #000;
 }
+
 h6,
 h5,
 h4,
@@ -147,6 +160,7 @@ button {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
+
 .roboto-semibold {
   font-family: "Roboto", sans-serif;
   font-weight: 350;
@@ -161,6 +175,7 @@ button {
   font-family: "Roboto", sans-serif;
   font-style: italic;
 }
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -272,6 +287,7 @@ button {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -381,4 +397,9 @@ a[href^="/"]:focus {
 .react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--selected {
   background-color: #D4AF37 !important;
   color: black !important;
+}
+
+/* Hide unavailable times completely instead of showing as inactive */
+.react-datepicker__time-list-item--disabled {
+  display: none !important;
 }

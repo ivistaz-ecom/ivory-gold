@@ -8,7 +8,7 @@ const GentleWelcome = () => {
       <div className="bg-[#73402C] py-10 flex flex-col justify-center items-center text-white">
         <h2>A Gentle Welcome</h2>
         <h4 className="lg:text-6xl text-3xl roboto-light">
-          Enjoy <span className="text-[#FBBC05] font-bold">20%</span> off your
+          Enjoy <span className="text-[#FBBC05] font-bold">10%</span> off your
           first visit
         </h4>
         <div className="lg:pt-10 pt-5">
