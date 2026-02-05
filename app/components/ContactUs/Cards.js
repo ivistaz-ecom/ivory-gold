@@ -13,11 +13,17 @@ const Cards = () => {
       alt: "map",
       title: "Visit Us",
       content: (
-        <>
+        <a
+              href="https://maps.app.goo.gl/ryKtJhTVz27cwHho6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#d4af37] transition-colors"
+            >
           No.32 Millers Road,<br/>
           Kaverappa Layout, Vasant Nagar<br/>
           Bengaluru, Karnataka 560025
-        </>
+          </a>
+    
 
       ),
     },
@@ -40,7 +46,7 @@ const Cards = () => {
       title: "Write to Us",
       content: (
         <>
-          <a href="mailto:contact@ivoryandgold.com">contact@ivoryandgold.com</a>
+          <a className="hover:text-[#d4af37] transition-colors" href="mailto:contact@ivoryandgold.com">contact@ivoryandgold.com</a>
         </>
       ),
     },
@@ -51,7 +57,7 @@ const Cards = () => {
       title: "Hours",
       content: (
         <>
-          Monday – Sunday: 10 AM – 8 PM
+          Monday – Sunday: 10 AM – 9 PM
         </>
       ),
     },
@@ -62,9 +68,9 @@ const Cards = () => {
       title: "Follow Us",
       content: (
         <div className="flex items-center justify-center gap-4">
-          <Link target="_blank" href="https://www.instagram.com/"><IoLogoInstagram className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
-          <Link target="_blank" href="https://www.facebook.com/"><RiFacebookCircleLine className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
-          <Link target="_blank" href="https://www.linkedin.com/company/"><PiLinkedinLogo className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
+          <Link target="_blank" href="https://www.instagram.com/ivoryandgoldsalon/"><IoLogoInstagram className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
+          <Link target="_blank" href="https://www.facebook.com/profile.php?id=61584431202109"><RiFacebookCircleLine className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link>
+          {/* <Link target="_blank" href="https://www.linkedin.com/company/"><PiLinkedinLogo className="text-3xl hover:text-[#D4AF37] duration-300 transition-all" /></Link> */}
 
         </div>
       ),

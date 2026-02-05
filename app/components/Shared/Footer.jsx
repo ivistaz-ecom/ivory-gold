@@ -11,12 +11,19 @@ export default function Footer() {
         {/* Logo + Address */}
         <div>
           <div className="flex items-center space-x-2 mx-auto justify-center lg:justify-start">
-           <Link href="/"> <Image src="/logo-black.svg" alt="logo" width={150} height={150} /> </Link>
+            <Link href="/"> <Image src="/logo-black.svg" alt="logo" width={150} height={150} /> </Link>
           </div>
           <h6 className="mt-4 text-lg leading-6 font-light text-center lg:text-left">
-          No.32 Millers Road,<br/>
-          Kaverappa Layout, Vasant Nagar<br/>
-          Bengaluru, Karnataka 560025
+            <a
+              href="https://maps.app.goo.gl/ryKtJhTVz27cwHho6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#d4af37] transition"
+            >
+              No.32 Millers Road,<br />
+              Kaverappa Layout, Vasant Nagar<br />
+              Bengaluru, Karnataka 560025
+            </a>
           </h6>
         </div>
 
@@ -24,14 +31,14 @@ export default function Footer() {
         <div className="lg:text-left text-center">
           <h3 className="text-lg font-light mb-4 border-b border-gray-200">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/about-us" className="hover:text-gray-600 text-lg font-light">About Us</Link></li>
-            {/* <li><Link href="/membership" className="hover:text-gray-600 text-lg font-light">Membership</Link></li> */}
-            <li><Link href="/blogs" className="hover:text-gray-600 text-lg font-light">Blogs</Link></li>
-            <li><Link href="/gallery" className="hover:text-gray-600 text-lg font-light">Gallery</Link></li>
-            <li><Link href="/media" className="hover:text-gray-600 text-lg font-light">Media</Link></li>
-            <li><Link href="/influencer-spotlight" className="hover:text-gray-600 text-lg font-light">Influencer Spotlight</Link></li>
-            {/* <li><Link href="/news" className="hover:text-gray-600 text-lg font-light">News</Link></li> */}
-            <li><Link href="/contact-us" className="hover:text-gray-600 text-lg font-light">Contact</Link></li>
+            <li><Link href="/about-us" className="hover:text-[#d4af37] text-lg font-light">About Us</Link></li>
+            {/* <li><Link href="/membership" className="hover:text-[#d4af37] text-lg font-light">Membership</Link></li> */}
+            <li><Link href="/blogs" className="hover:text-[#d4af37] text-lg font-light">Blogs</Link></li>
+            <li><Link href="/gallery" className="hover:text-[#d4af37] text-lg font-light">Gallery</Link></li>
+            <li><Link href="/media" className="hover:text-[#d4af37] text-lg font-light">Media</Link></li>
+            <li><Link href="/influencer-spotlight" className="hover:text-[#d4af37] text-lg font-light">Influencer Spotlight</Link></li>
+            {/* <li><Link href="/news" className="hover:text-[#d4af37] text-lg font-light">News</Link></li> */}
+            <li><Link href="/contact-us" className="hover:text-[#d4af37] text-lg font-light">Contact</Link></li>
           </ul>
         </div>
 
@@ -39,12 +46,12 @@ export default function Footer() {
         <div className="lg:text-left text-center">
           <h3 className="text-lg font-light mb-4 border-b border-gray-200">Services</h3>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/nails" className="hover:text-gray-600 text-lg font-light">Nails</Link></li>
-            <li><Link href="/manicure" className="hover:text-gray-600 text-lg font-light">Manicure</Link></li>
-            <li><Link href="/pedicure" className="hover:text-gray-600 text-lg font-light">Pedicure</Link></li>
-            <li><Link href="/hair" className="hover:text-gray-600 text-lg font-light">Hair</Link></li>
-            <li><Link href="/beauty" className="hover:text-gray-600 text-lg font-light">Beauty</Link></li>
-            <li><Link href="/make-up" className="hover:text-gray-600 text-lg font-light">Makeup</Link></li>
+            <li><Link href="/nails" className="hover:text-[#d4af37] text-lg font-light">Nails</Link></li>
+            <li><Link href="/manicure" className="hover:text-[#d4af37] text-lg font-light">Manicure</Link></li>
+            <li><Link href="/pedicure" className="hover:text-[#d4af37] text-lg font-light">Pedicure</Link></li>
+            <li><Link href="/hair" className="hover:text-[#d4af37] text-lg font-light">Hair</Link></li>
+            <li><Link href="/beauty" className="hover:text-[#d4af37] text-lg font-light">Beauty</Link></li>
+            <li><Link href="/make-up" className="hover:text-[#d4af37] text-lg font-light">Makeup</Link></li>
           </ul>
         </div>
 
@@ -59,9 +66,9 @@ export default function Footer() {
           <div className="flex flex-col items-center space-y-6 lg:items-start">
             <h3 className="text-lg font-light mb-3 wolmer-light">Social Media</h3>
             <div className="flex space-x-4 text-2xl">
-              <a target="_blank" href="https://www.instagram.com/ivoryandgoldsalon/"><FaInstagram className="hover:text-gray-600" /></a>
-              <a target="_blank" href="https://www.facebook.com/profile.php?id=61584431202109"><FaFacebook className="hover:text-gray-600" /></a>
-              {/* <a href="#"><FaLinkedin className="hover:text-gray-600" /></a> */}
+              <a target="_blank" href="https://www.instagram.com/ivoryandgoldsalon/"><FaInstagram className="hover:text-[#d4af37]" /></a>
+              <a target="_blank" href="https://www.facebook.com/profile.php?id=61584431202109"><FaFacebook className="hover:text-[#d4af37]" /></a>
+              {/* <a href="#"><FaLinkedin className="hover:text-[#d4af37]" /></a> */}
             </div>
           </div>
         </div>
