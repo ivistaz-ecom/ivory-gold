@@ -53,9 +53,13 @@ const BookingForm = () => {
       newErrors["your-email"] = "Please enter a valid email address";
     }
 
-    // Phone validation
+    // Phone validation - exactly 10 digits (national number)
+    const phoneDigits = (formData["your-phone"] || "").replace(/\D/g, "");
+    const nationalDigits = phoneDigits.startsWith("91") ? phoneDigits.slice(2) : phoneDigits;
     if (!formData["your-phone"]) {
       newErrors["your-phone"] = "Phone number is required";
+    } else if (nationalDigits.length !== 10) {
+      newErrors["your-phone"] = "Phone number must be exactly 10 digits";
     }
 
     // Service validation
@@ -106,42 +110,23 @@ const BookingForm = () => {
     }
   };
 
-  // Handle phone number change
+  // Handle phone number change — allow only 10 digits after +91 (India)
   const handlePhoneChange = (value) => {
     if (!value) {
       setFormData(prev => ({ ...prev, "your-phone": "" }));
       return;
     }
 
-    // Extract digits only (remove + and spaces)
     const digits = value.replace(/\D/g, "");
-
-    // Keep first 2–3 digits as country code, rest as actual number
-    let countryCode = "";
-    let number = "";
-
-    if (digits.startsWith("91")) { // If India selected
-      countryCode = "+91";
-      number = digits.slice(2);
-    } else {
-      // General fallback (just take first 1–3 digits as code)
-      countryCode = "+" + digits.slice(0, 3);
-      number = digits.slice(3);
-    }
-
-    // Restrict to 10 digits max for number
-    if (number.length > 10) {
-      number = number.slice(0, 10);
-    }
-
-    const finalNumber = countryCode + number;
+    // Take only 10 national digits (after 91 for India)
+    const national = digits.startsWith("91") ? digits.slice(2, 12) : digits.slice(0, 10);
+    const finalNumber = "+91" + national;
 
     setFormData(prev => ({
       ...prev,
-      "your-phone": finalNumber
+      "your-phone": national ? finalNumber : ""
     }));
 
-    // Clear error if fixed
     if (errors["your-phone"]) {
       setErrors(prev => ({ ...prev, "your-phone": "" }));
     }
@@ -393,8 +378,10 @@ const BookingForm = () => {
                 value={formData["your-phone"]}
                 onChange={handlePhoneChange}
                 defaultCountry="IN"
+                countries={["IN"]}
                 international
-                countryCallingCodeEditable={true}
+                countryCallingCodeEditable={false}
+                limitMaxLength={true}
                 className="phone-input focus:outline-none focus:ring-0"
               />
             </div>
