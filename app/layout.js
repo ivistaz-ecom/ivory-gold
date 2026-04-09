@@ -18,11 +18,11 @@ export const metadata = {
   description: "ivory gold is a beauty salon in bangalore",
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/logo.svg', type: 'image/svg+xml' },
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon.png", sizes: "96x96", type: "image/png" },
     ],
     apple: [
-      { url: '/logo.svg', type: 'image/svg+xml' },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
